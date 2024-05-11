@@ -1,5 +1,11 @@
 <h1 align="center">the_guy_that_who_asked</h1>
-<h2 align="center">Small discord bot that says `me` when someone types `who asked`</h1>
+<h2 align="center">Small discord bot that says `me` when someone types `who asked`</h2>
+
+<div align="center">
+  <img alt="Stargazers" src="https://img.shields.io/github/stars/budchirp/the_guy_that_who_asked?style=for-the-badge&colorA=0b1221&colorB=ff8e8e" />
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/budchirp/the_guy_that_who_asked?style=for-the-badge&colorA=0b1221&colorB=BDB0E4" />
+  <img alt="Issues" src="https://img.shields.io/github/issues/budchirp/the_guy_that_who_asked?style=for-the-badge&colorA=0b1221&colorB=FBC19D" />
+</div>
 
 ## How to run
 
