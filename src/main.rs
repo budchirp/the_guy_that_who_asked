@@ -1,5 +1,3 @@
-mod commands;
-
 use std::env;
 
 use serenity::async_trait;
@@ -8,6 +6,8 @@ use serenity::model::application::interaction::{Interaction, InteractionResponse
 use serenity::model::channel::Message;
 use serenity::model::gateway::Ready;
 use serenity::prelude::*;
+
+mod commands;
 
 struct Handler;
 
@@ -19,6 +19,15 @@ impl EventHandler for Handler {
                 eprintln!("Error while sending message: {:?}", why);
             }
         }
+    }
+
+    async fn ready(&self, ctx: Context, ready: Ready) {
+        println!("{} is connected!", ready.user.name);
+
+        let _commands = Command::create_global_application_command(&ctx.http, |command| {
+            commands::ping::register(command)
+        })
+            .await;
     }
 
     async fn interaction_create(&self, ctx: Context, interaction: Interaction) {
@@ -39,15 +48,6 @@ impl EventHandler for Handler {
                 eprintln!("Cannot response to slash command: {}", why);
             }
         };
-    }
-
-    async fn ready(&self, ctx: Context, ready: Ready) {
-        println!("{} is connected!", ready.user.name);
-
-        let _commands = Command::create_global_application_command(&ctx.http, |command| {
-            commands::ping::register(command)
-        })
-        .await;
     }
 }
 
