@@ -1,8 +1,7 @@
 .idea/
+.vscode/
 
 debug/
 target/
-
-Cargo.lock
 
 **/.env
